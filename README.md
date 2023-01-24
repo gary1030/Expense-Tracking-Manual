@@ -1,35 +1,44 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Expense-tracking Manual
 
 ## Getting Started
 
-First, run the development server:
+First, copy `.env.example` and fill in required variables.
+```txt
+LINE_CHANNEL_ACCESS_TOKEN=
+
+GOOGLE_SHEETS_PRIVATE_KEY=
+GOOGLE_SHEETS_CLIENT_EMAIL=
+GOOGLE_SHEETS_SPREADSHEET_ID=
+```
+
+
+Second, install required packages:
+
+```bash
+yarn
+```
+
+Third, run the development server:
 
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## API Endpoints
+This is a line bot server, so only one endpoint is provided.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+`/api/line`
+Receive message from line and parse it to decide what to do. Then, reply status to client.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Functions
+1. Save Expenses
+2. Count today's spending
+3. Count this/last month's spending
+4. List this/last month's spending
 
 ## Deploy on Vercel
 
