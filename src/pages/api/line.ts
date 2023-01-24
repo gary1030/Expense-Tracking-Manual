@@ -5,7 +5,7 @@ import { getSpendingList, saveExpense } from '@/libs/sheet'
 const TOKEN = process.env.LINE_CHANNEL_ACCESS_TOKEN
 
 const hintMessage = "欲登記花費，請輸入項目空一格輸入金額" + "\n\n" + "欲查詢今日花費，請輸入今日花費" + "\n\n" 
-+ "欲查詢本月花費，請輸入本月花費" + "\n\n"
++ "欲查詢本月花費，請輸入本月花費"
 
 async function sendReplyMessage(replyToken: string, message: string) {
     if (!TOKEN || !replyToken) {
