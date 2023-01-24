@@ -71,7 +71,7 @@ export default function handler(
                 break
             default:
                 try {
-                    var {expense, amount} = parseMessage(req.body.msg)
+                    var {expense, amount} = parseMessage(messageText)
                     if (expense && amount) {
                         saveExpense(userId, timeStamp, expense, amount)
                         message = "Item: " + expense + "\n\n" + "Cost amount: " + amount + "\n\n" +"Record successfully!"
