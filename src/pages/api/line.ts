@@ -120,7 +120,7 @@ async function todayExpense(userId: string) {
 
     const total = todayExpenses.reduce((acc, item) => acc + Number(item[4]), 0)
 
-    return total.toString()
+    return "Total: " + total.toString()
 }
 
 async function monthExpense(userId: string, year: number, month: number) {
