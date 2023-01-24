@@ -32,7 +32,14 @@ export default function handler(
     req: NextApiRequest,
     res: NextApiResponse,
 ) {
+
     console.log(req.body)
+
+    if (req.body.events && req.body.events.length == 0) {
+        res.status(200)
+        res.send("Success")
+        return
+    }
 
     if (req.body.events && req.body.events[0].type === "message") {
         // Message data, must be stringified
